@@ -136,7 +136,6 @@ export default {
   position:absolute;
   top:-75px;
   text-align:center;
-  width:100%;
 }
 .sale {
   color:red;

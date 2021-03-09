@@ -4,29 +4,35 @@
       <nav>
         <ul>
           <li class="nav-item">
-            <img src="./assets/build-a-bot-logo.png" class="logo">
-            Build a bot
+            <router-link v-bind:to="{name: 'Home'}">
+              <img src="./assets/build-a-bot-logo.png" class="logo">
+              Home
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/build">Build</router-link>
           </li>
         </ul>
       </nav>
     </header>
     <main>
       <!-- <HomePage/> -->
-      <RobotBuilder/>
+      <!-- <RobotBuilder/> -->
+      <router-view/>
     </main>
   </div>
 </template>
 
 <script>
-// import HomePage from './components/HomePage.vue';
-import RobotBuilder from './components/RobotBuilder.vue';
+// // import HomePage from './components/HomePage.vue';
+// import RobotBuilder from './components/RobotBuilder.vue';
 
 export default {
   name: 'App',
-  components: {
-    // HomePage,
-    RobotBuilder,
-  },
+  // components: {
+  //   // HomePage,
+  //   RobotBuilder,
+  // },
 };
 </script>
 

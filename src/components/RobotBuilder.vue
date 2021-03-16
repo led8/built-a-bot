@@ -45,10 +45,10 @@
           <tr v-for="(robot, index) in cart" v-bind:key="index">
             <td>{{robot.head.title}}</td>
             <td class="cost">{{robot.head.cost
-              + robot.leftArm.cost
-              + robot.rightArm.cost
-              + robot.torso.cost
-              + robot.base.cost}}
+                              + robot.leftArm.cost
+                              + robot.rightArm.cost
+                              + robot.torso.cost
+                              + robot.base.cost}}
             </td>
           </tr>
         </tbody>
@@ -83,7 +83,12 @@ export default {
   methods: {
     addToCart() {
       const robot = this.selectedRobot;
-      this.cart.push(robot);
+      const cost = robot.head.cost
+      + robot.leftArm.cost
+      + robot.rightArm.cost
+      + robot.torso.cost
+      + robot.base.cost;
+      this.cart.push({ ...robot, ...cost });
     },
   },
 };

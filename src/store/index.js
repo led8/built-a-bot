@@ -9,7 +9,7 @@ export default new Vuex.Store({
   },
   mutations: {
     addRobotToCart(state, robot) {
-      this.cart.push(robot);
+      state.cart.push(robot);
     },
   },
 });

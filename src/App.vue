@@ -12,6 +12,9 @@
           <li class="nav-item">
             <router-link to="/build">Build</router-link>
           </li>
+          <li class="nav-item">
+            <router-link to="/cart">Cart ({{cart.length}})</router-link>
+          </li>
         </ul>
       </nav>
     </header>
@@ -29,6 +32,11 @@
 
 export default {
   name: 'App',
+  computed: {
+    cart() {
+      return this.$store.state.cart;
+    },
+  },
   // components: {
   //   // HomePage,
   //   RobotBuilder,

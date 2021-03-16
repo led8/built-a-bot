@@ -45,7 +45,6 @@
           <tr v-for="(robot, index) in cart" v-bind:key="index">
             <td>{{robot.head.title}}</td>
             <td class="cost">{{robot.cost}}</td>
-            <td>{{cart}}</td>
           </tr>
         </tbody>
       </table>

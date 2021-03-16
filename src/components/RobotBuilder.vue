@@ -44,12 +44,8 @@
         <tbody>
           <tr v-for="(robot, index) in cart" v-bind:key="index">
             <td>{{robot.head.title}}</td>
-            <td class="cost">{{robot.head.cost
-                              + robot.leftArm.cost
-                              + robot.rightArm.cost
-                              + robot.torso.cost
-                              + robot.base.cost}}
-            </td>
+            <td class="cost">{{robot.cost}}</td>
+            <td>{{cart}}</td>
           </tr>
         </tbody>
       </table>
@@ -88,7 +84,7 @@ export default {
       + robot.rightArm.cost
       + robot.torso.cost
       + robot.base.cost;
-      this.cart.push({ ...robot, ...cost });
+      this.cart.push({ ...robot, ...{ cost } });
     },
   },
 };

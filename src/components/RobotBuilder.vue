@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div v-if="availabledParts" class="content">
     <button v-on:click="addToCart()" class="add-to-cart">Add to Cart</button>
     <div class="top-row">
         <div class="robot-name">
@@ -53,18 +53,18 @@
 </template>
 
 <script>
-import availabledParts from '../data/parts';
+// import availabledParts from '../data/parts';
 import PartSelector from './PartSelector.vue';
 
 export default {
   name: 'RobotBuilder',
   components: { PartSelector },
   created() { // lifecycle component go to https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram
-    console.log('component created');
+    this.$store.dispatch('getParts');
   },
   data() {
     return {
-      availabledParts,
+      // availabledParts,
       cart: [],
       selectedRobot: {
         head: {},
@@ -74,6 +74,11 @@ export default {
         base: {},
       },
     };
+  },
+  computed: {
+    availabledParts() {
+      return this.$store.state.parts;
+    },
   },
   methods: {
     addToCart() {
